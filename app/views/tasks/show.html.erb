@@ -1,0 +1,4 @@
+<h2 class="m-2"><%= @task.title%></h2>
+<p class="p-3 bg-light text-dark" ><%= @task.details %></p>
+
+<div type="button" class="btn btn-outline-primary"> <%= link_to "Edit this task", edit_task_path(@task) %> </div>

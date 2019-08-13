@@ -1,0 +1,21 @@
+<h2>My tasks</h2>
+
+<% @tasks.each do |task| %>
+<div class= d-flex>
+    <% if task.completed == true %>
+    <p>✅ <%= link_to task.title, task_path(task) %>
+    <%= link_to "❌", delete_task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %> </p>
+    <% else %>
+    <p>⬜ <%= link_to task.title, task_path(task) %>
+    <%= link_to "❌", delete_task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></p>
+    <% end %>
+
+ </div>
+<% end %>
+
+<%= link_to 'Add a new task ➕', new_task_path %>
+
